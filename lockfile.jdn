@@ -1,0 +1,4 @@
+@[{:url "git@github.com:janet-lang/pkgs.git" :tag "36e69933328cc7ac98ac8d59fca315906cd82384" :type :git}
+  {:url "git@github.com:ianthehenry/cmd" :tag "b4308de361d0f90dd96cc0f9a8dc6881e0e851c6" :type :git}
+  {:url "git@github.com:janet-lang/spork.git" :tag "60110c3688c5687cc603159bcfa38d579f95a27d" :type :git}
+  {:url "git@github.com:janet-lang/jaylib.git" :tag "edd878ef0a203fca6377b8a8342502b329bf718e" :type :git}]

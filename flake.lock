@@ -1,0 +1,48 @@
+{
+  "nodes": {
+    "janet-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1763689277,
+        "narHash": "sha256-3lea93gd7mWWV2k+F2tIfUt5hbcyL3s9o8fTsB2zT4A=",
+        "owner": "turnerdev",
+        "repo": "janet-nix",
+        "rev": "31063f3c2dbb20d618676127281ec1c9118092e4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "turnerdev",
+        "repo": "janet-nix",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1769018530,
+        "narHash": "sha256-MJ27Cy2NtBEV5tsK+YraYr2g851f3Fl1LpNHDzDX15c=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "88d3861acdd3d2f0e361767018218e51810df8a1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "janet-nix": "janet-nix",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
