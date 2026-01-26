@@ -17,6 +17,7 @@
       nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; });
     in {
       packages = forAllSystems (system: {
+        default = self.packages.${system}.boids;
         boids = janet-nix.packages.${system}.mkJanet {
           name = "boids";
           version = "0.0.1";
