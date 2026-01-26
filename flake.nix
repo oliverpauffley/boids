@@ -40,7 +40,7 @@
         build = self.packages.${system}.default;
 
         test-suite = nixpkgs.legacyPackages.${system}.runCommand "judge" { } ''
-          ${self.packages.${system}.default}/bin/my-app --help > $out
+          ${self.packages.${system}.default}/bin/boids --help > $out
           echo "Binary executed successfully" >> $out
         '';
       });
