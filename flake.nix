@@ -35,6 +35,15 @@
 
       defaultPackage = forAllSystems (system: self.packages.${system}.boids);
 
+      hydraJobs = forAllSystems (system: {
+        build = self.packages.${system}.default;
+
+        test-suite = nixpkgs.legacyPackages.${system}.runCommand "judge" { } ''
+          ${self.packages.${system}.default}/bin/my-app --help > $out
+          echo "Binary executed successfully" >> $out
+        '';
+      });
+
       devShell = forAllSystems (system:
         with nixpkgsFor.${system};
         let

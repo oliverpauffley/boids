@@ -1,6 +1,6 @@
 (declare-project
   :name "boids"
-  :description ```A simple Janet program```
+  :description ```boids in janet.```
   :version "0.0.0"
   :dependencies ["spork" "jaylib"])
 
