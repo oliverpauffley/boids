@@ -1,5 +1,6 @@
 (use jaylib)
 (use judge)
+(use cmd)
 (use ./vec)
 
 (def gray [255 255 255])
@@ -66,7 +67,7 @@
 (test (cohesion
         {:pos [1 2] :velocity [0 0]}
         [@{:pos [1 3] :velocity [0 0]} @{:pos [2 5] :velocity [0 0]}])
-  @[0.0025 0.01])
+      @[0.0025 0.01])
 
 (defn alignment [boid boids]
   "boids should match their velocity to all the other boids"
@@ -103,24 +104,26 @@
   boids)
 
 (test (update-boids [@{:pos @[1 2] :velocity @[4 5]} @{:pos [1 3] :velocity @[0 0]}])
-  [@{:pos @[5 7] :velocity @[10 10]}
-   @{:pos @[1 3]
-     :velocity @[-2.365 -0.36500000000000021]}])
+      [@{:pos @[5 7] :velocity @[10 10]}
+       @{:pos @[1 3]
+         :velocity @[-2.365 -0.36500000000000021]}])
 
-(defn main [&args]
-  (init-window screen-size screen-size "Boids")
-  (set-target-fps fps)
-  (hide-cursor)
-  (let
-    [boids (seq [:repeat boid-num]
-             (new-boid
-               (math/floor (* screen-size (math/random)))
-               (math/floor (* screen-size (math/random)))))]
-    (while (not (window-should-close))
-      (begin-drawing)
-      (clear-background background)
-      (draw-boids boids)
-      (update-boids boids)
-      (end-drawing))
 
-    (close-window)))
+(cmd/main (cmd/fn
+            [--boid-num (optional :int 20)]
+            (init-window screen-size screen-size "Boids")
+            (set-target-fps fps)
+            (hide-cursor)
+            (let
+              [boids (seq [:repeat boid-num]
+                       (new-boid
+                         (math/floor (* screen-size (math/random)))
+                         (math/floor (* screen-size (math/random)))))]
+              (while (not (window-should-close))
+                (begin-drawing)
+                (clear-background background)
+                (draw-boids boids)
+                (update-boids boids)
+                (end-drawing))
+
+              (close-window))))
