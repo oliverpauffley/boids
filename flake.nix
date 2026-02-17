@@ -24,15 +24,6 @@
           src = ./.;
           quickbin = ./init.janet;
         };
-        jfmt = janet-nix.packages.${system}.mkJanet rec {
-          version = "0.0.1";
-          name = "jfmt";
-          src = builtins.fetchGit {
-            url = "https://github.com/andrewchambers/jfmt.git";
-            rev = "b27dff6bb32b89b20462eec33f50c1583c301b0a";
-          };
-          quickbin = "./jfmt.janet";
-        };
       });
 
       defaultPackage = forAllSystems (system: self.packages.${system}.boids);
@@ -66,7 +57,6 @@
           packages = [
             janet
             jpm
-            jfmt
             raylib
             libGL
             xorg.libX11
