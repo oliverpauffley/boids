@@ -1,6 +1,6 @@
 {
   description = "A simple janet-nix project";
-
+  nixConfig = { allow-import-from-derivation = true; };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     janet-nix = {
