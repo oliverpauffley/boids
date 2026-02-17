@@ -27,6 +27,7 @@
         };
         jfmt = janet-nix.packages.${system}.mkJanet rec {
           pname = "jfmt";
+          version = "0.0.1";
           name = pname;
           src = builtins.fetchGit {
             url = "https://github.com/andrewchambers/jfmt.git";
