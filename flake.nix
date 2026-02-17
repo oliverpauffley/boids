@@ -18,14 +18,16 @@
     in {
       packages = forAllSystems (system: {
         default = self.packages.${system}.boids;
-        boids = janet-nix.packages.${system}.mkJanet {
-          name = "boids";
+        boids = janet-nix.packages.${system}.mkJanet rec {
+          pname = "boids";
+          name = pname;
           version = "0.0.1";
           src = ./.;
           quickbin = ./init.janet;
         };
-        jfmt = janet-nix.packages.${system}.mkJanet {
-          name = "jfmt";
+        jfmt = janet-nix.packages.${system}.mkJanet rec {
+          pname = "jfmt";
+          name = pname;
           src = builtins.fetchGit {
             url = "https://github.com/andrewchambers/jfmt.git";
             rev = "b27dff6bb32b89b20462eec33f50c1583c301b0a";
