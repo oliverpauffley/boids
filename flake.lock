@@ -1,22 +1,18 @@
 {
   "nodes": {
-    "janet-nix": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
+    "jaylib-src": {
+      "flake": false,
       "locked": {
-        "lastModified": 1763689277,
-        "narHash": "sha256-3lea93gd7mWWV2k+F2tIfUt5hbcyL3s9o8fTsB2zT4A=",
-        "owner": "turnerdev",
-        "repo": "janet-nix",
-        "rev": "31063f3c2dbb20d618676127281ec1c9118092e4",
+        "lastModified": 1768773215,
+        "narHash": "sha256-6BseUHbZ8Cs9ZP8FpUUn9qLYxELngFKvLR/arR/X5FE=",
+        "owner": "janet-lang",
+        "repo": "jaylib",
+        "rev": "9b899e1fa409c1ae4291bff89deb303b44d2b1ec",
         "type": "github"
       },
       "original": {
-        "owner": "turnerdev",
-        "repo": "janet-nix",
+        "owner": "janet-lang",
+        "repo": "jaylib",
         "type": "github"
       }
     },
@@ -38,7 +34,7 @@
     },
     "root": {
       "inputs": {
-        "janet-nix": "janet-nix",
+        "jaylib-src": "jaylib-src",
         "nixpkgs": "nixpkgs"
       }
     }
